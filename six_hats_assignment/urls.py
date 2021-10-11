@@ -20,5 +20,6 @@ from user import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/',views.user_list),
-    path('users_pagination/',views.users)
+    path('users_pagination/',views.users),
+    path('user_detail/<int:pk>/',views.user_detail)
 ]
