@@ -49,7 +49,7 @@ def user_detail(request,pk):
     try:
         user = User.objects.get(pk=pk)
     except User.DoesNotExist:
-        return HttpResponse(status=status.HTTP_404_NOT_FOUND)
+        return Response({"msg":"No records exists with this id.."},status=status.HTTP_204_NO_CONTENT)
 
     if request.method == 'GET':
         serializer = UserSerialiser(user)
